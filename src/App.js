@@ -7,19 +7,29 @@ function App() {
 
   const features = [
     {
-      title: "Track your route",
-      description: "Plan your sailing journey with AI-powered routing that considers weather conditions, vessel characteristics, and safety parameters.",
-      image: "/route-screen.png"
+      title: "Intelligent routes",
+      description: "Discover your sailing destinations and most comfortable routes with our AI-powered insights. In a few clicks get your entire journey planned and see what’s ahead with AI forecast analysis. Navigate smarter and avoid hazards with ease.",
+      image: "/intelligent-routes.png"
     },
     {
-      title: "Weather Safety Score",
-      description: "Get real-time safety scores based on weather conditions, wave height, and wind patterns to make informed decisions.",
-      image: "/weather-screen.png"
+      title: "Personalised guidance and assistance",
+      description: "Whether you’re a beginner mastering the basics or an experienced sailor navigating local marine rules and laws, our app has you covered. Get tailored advice for every skill level, from docking techniques to understanding regional hazards and regulations, ensuring smooth sailing wherever you go.",
+      image: "/intelligent-routes copy.png"
     },
     {
-      title: "Smart Notifications",
-      description: "Receive timely alerts about weather changes, potential hazards, and optimal sailing conditions for your planned route.",
-      image: "/notifications-screen.png"
+      title: "Comprehensive real-time data",
+      description: "Get all the critical information at your fingertips—live weather updates, wind speed, boat speed, ETA, tide schedules, and more. With built-in gyroscope technology, monitor your boat’s movements and stability for a safer, more comfortable sailing experience.",
+      image: "/intelligent-routes copy 2.png"
+    },
+    {
+      title: "Community and Crew management",
+      description: "Connect with fellow sailors, share routes, and exchange advice within a vibrant sailing community. Manage your crew effectively with in-app tools for sharing information, assigning tasks, coordinating schedules, and ensuring smooth teamwork on every voyage.",
+      image: "/intelligent-routes copy 3.png"
+    },
+    {
+      title: "Experience tracking and gamification",
+      description: "Turn your journeys into achievements with our built-in sailing log. Automatically track your miles, routes, and time on the water while earning badges and rewards for your accomplishments. Make every trip count and watch your sailing story unfold!",
+      image: "/intelligent-routes copy 4.png"
     }
   ];
 
@@ -27,7 +37,7 @@ function App() {
     <div className={`App ${showDebugLines ? 'debug-mode' : ''}`}>
       <nav className="navbar">
         <div className="logo">
-          <strong>KapitonAI</strong>
+          <strong>YourFirstMate</strong>
         </div>
         <div className="nav-links">
           <a href="#features">Features</a>
@@ -48,8 +58,8 @@ function App() {
             <span className="stars">★★★★★</span>
             <span>Over 10,000 Captains 5-star ratings</span>
           </div>
-          <h1>Sailing AI assistant</h1>
-          <p>Reduce sailing stress checking weather safety score, smart notifications, AI routing and more.</p>
+          <h1>Your First Mate AI</h1>
+          <p>Embark on stress-free and confident sailing with KapitonAI, the AI-powered assistant tailored according to your experience and vessel, gathers all the weather, location, maritime information and provides real-time actionable alerts to simplify the complexities of sailing so you can focus on the adventure with the maximum comfort.</p>
           <div className="app-buttons">
             <a 
               href="https://apps.apple.com/your-app" 
@@ -71,7 +81,7 @@ function App() {
         </div>
         <div className="hero-image">
           <img 
-            src="/app-screenshot.png" 
+            src="/intelligent-routes.png" 
             alt="KapitonAI Route Screen"
             style={{ 
               display: 'block', 
@@ -115,8 +125,8 @@ function App() {
         <div className="footer-container">
           <div className="footer-content">
             <div className="footer-section">
-              <h4>KapitonAI</h4>
-              <p>Making sailing safer and more enjoyable with AI-powered tools and real-time insights.</p>
+              <h4>YourFirstMate</h4>
+              <p>Making sailing safer and more enjoyable with YourFirstMate-powered tools and real-time insights.</p>
             </div>
             <div className="footer-section">
               <h4>Product</h4>
@@ -144,7 +154,7 @@ function App() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 KapitonAI. All rights reserved.</p>
+            <p>&copy; 2024 YourFirstMate. All rights reserved.</p>
           </div>
         </div>
       </footer>

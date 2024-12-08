@@ -137,6 +137,7 @@ h1 {
   padding: 0;
   margin: 0;
   justify-content: flex-start;
+  background: transparent;
 }
 
 .hero-image img {
@@ -145,7 +146,8 @@ h1 {
   display: block;
   margin: 0;
   padding: 0;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: none;
+  background: transparent;
 }
 
 /* Footer Styles */
@@ -269,24 +271,25 @@ h1 {
   width: 72%;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: none;
   transition: all 0.3s ease;
   display: block;
   margin: 0 auto;
+  background: transparent;
 }
 
 .features-tabs {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .feature-tab {
-  padding: 1.5rem;
+  padding: 0.5rem 1.8rem;
   background: white;
   border-radius: 12px;
   cursor: pointer;
@@ -307,7 +310,7 @@ h1 {
 }
 
 .feature-tab h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--secondary-color);
 }
@@ -342,4 +345,79 @@ h1 {
 
 .debug-mode .App {
   outline: 2px solid blue;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 4rem 0;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+
+  .features-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .features-app-preview {
+    max-width: 100%;
+  }
+
+  .features-tabs {
+    max-width: 100%;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .btn-download {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .features h2 {
+    font-size: 2.2rem;
+  }
+
+  .feature-tab h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-tab p {
+    font-size: 0.9rem;
+  }
 }
