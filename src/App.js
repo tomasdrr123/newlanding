@@ -4,6 +4,8 @@ import { useState } from 'react';
 function App() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [showDebugLines, setShowDebugLines] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState('');
 
   const features = [
     {
@@ -33,22 +35,67 @@ function App() {
     }
   ];
 
+  const handleDownloadClick = (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+
+  const handleSubmitEmail = (e) => {
+    e.preventDefault();
+    console.log('Email submitted:', email);
+    setEmail('');
+    setShowModal(false);
+    alert('Thank you! We will notify you when the app launches.');
+  };
+
   return (
     <div className={`App ${showDebugLines ? 'debug-mode' : ''}`}>
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <button className="modal-close" onClick={() => setShowModal(false)}>×</button>
+            <h2>Coming Soon!</h2>
+            <p>Leave your email to be notified when we launch.</p>
+            <form onSubmit={handleSubmitEmail}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit">Notify Me</button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <nav className="navbar">
-        <div className="logo">
-          <strong>YourFirstMate</strong>
+        <div className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
+          <img src="/logo firstmate.png" alt="YourFirstMate" />
         </div>
         <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#about" onClick={(e) => {
+          <a href="#features" onClick={(e) => {
             e.preventDefault();
-            setShowDebugLines(!showDebugLines);
+            document.getElementById('features').scrollIntoView({
+              behavior: 'smooth'
+            });
+          }}>Features</a>
+          <a href="#features" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('features').scrollIntoView({
+              behavior: 'smooth'
+            });
           }}>About</a>
-          <a href="#faq">FAQ</a>
+          <a href="#features" onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('features').scrollIntoView({
+              behavior: 'smooth'
+            });
+          }}>FAQ</a>
         </div>
         <div className="nav-buttons">
-          <button className="btn-download">Download</button>
+          <button className="btn-download" onClick={handleDownloadClick}>Download</button>
         </div>
       </nav>
 
@@ -62,18 +109,16 @@ function App() {
           <p>Embark on stress-free and confident sailing with KapitonAI, the AI-powered assistant tailored according to your experience and vessel, gathers all the weather, location, maritime information and provides real-time actionable alerts to simplify the complexities of sailing so you can focus on the adventure with the maximum comfort.</p>
           <div className="app-buttons">
             <a 
-              href="https://apps.apple.com/your-app" 
+              href="#" 
               className="store-button"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={handleDownloadClick}
             >
               <img src="/app-store.svg" alt="Download on App Store" />
             </a>
             <a 
-              href="https://play.google.com/store/apps/your-app" 
+              href="#" 
               className="store-button"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={handleDownloadClick}
             >
               <img src="/google-play.svg" alt="Get it on Google Play" />
             </a>
@@ -92,9 +137,9 @@ function App() {
         </div>
       </section>
 
-      <section className="features">
+      <section className="features" id="features">
         <div className="features-container">
-          <h2>What can you do with KapitonAI?</h2>
+          <h2>What can you do with YourFirstMate AI?</h2>
           
           <div className="features-content">
             <div className="features-app-preview">
@@ -125,7 +170,10 @@ function App() {
         <div className="footer-container">
           <div className="footer-content">
             <div className="footer-section">
-              <h4>YourFirstMate</h4>
+              <h4 onClick={(e) => {
+                e.preventDefault();
+                setShowDebugLines(!showDebugLines);
+              }} style={{ cursor: 'pointer' }}>YourFirstMate</h4>
               <p>Making sailing safer and more enjoyable with YourFirstMate-powered tools and real-time insights.</p>
             </div>
             <div className="footer-section">
