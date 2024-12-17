@@ -10,6 +10,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2%;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 /* Navbar Styles */
@@ -158,9 +161,12 @@ h1 {
 .footer {
   background-color: #f8f9fa;
   padding: 4rem 0 2rem;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .footer-container {
@@ -241,9 +247,12 @@ h1 {
 .features {
   padding: 4rem 0;
   background-color: #f8f9fa;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .features-container {
@@ -765,4 +774,11 @@ body.menu-open {
   .App, .features-container, .footer-container {
     padding: 0 5%;
   }
+}
+
+/* Add these rules at the root level */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
