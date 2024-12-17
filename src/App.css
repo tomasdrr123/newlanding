@@ -151,7 +151,8 @@ h1 {
   max-width: 28%;
   padding: 0;
   margin: 0;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   background: transparent;
 }
 
@@ -159,7 +160,7 @@ h1 {
   width: 95%;
   height: auto;
   display: block;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-shadow: none;
   background: transparent;
@@ -168,32 +169,26 @@ h1 {
 /* Footer Styles */
 .footer {
   position: relative;
-  background-color: #f8f9fa;
   padding: 4rem 0 2rem;
-  width: 100%;
-  left: 0;
-  right: 0;
-  margin: 0;
+  background-color: #f8f9fa;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .footer:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100vw;
-  right: -100vw;
-  bottom: 0;
-  background-color: #f8f9fa;
-  z-index: -1;
+  display: none;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  position: relative;
-  z-index: 1;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-content {
@@ -285,34 +280,35 @@ h1 {
 }
 
 /* Features Section */
+.features-wrapper {
+  background-color: #f8f9fa;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .features {
   position: relative;
   padding: 4rem 0;
   background-color: #f8f9fa;
-  width: 100%;
-  left: 0;
-  right: 0;
-  margin: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .features:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100vw;
-  right: -100vw;
-  bottom: 0;
-  background-color: #f8f9fa;
-  z-index: -1;
+  display: none;
 }
 
 .features-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  position: relative;
-  z-index: 1;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .features h2 {
@@ -943,4 +939,27 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .feature-tab {
+    text-align: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .feature-tab h3 {
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-tab p {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* Remove the hover/active transform effect on mobile */
+  .feature-tab:hover,
+  .feature-tab.active {
+    transform: none;
+  }
 }
