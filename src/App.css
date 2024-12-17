@@ -110,6 +110,7 @@ h1 {
   font-size: 1.1rem;
   color: var(--text-color);
   margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .app-buttons {
@@ -372,11 +373,19 @@ h1 {
   .hero-content {
     max-width: 100%;
     padding-right: 0;
+    text-align: center;
   }
 
   .hero-image {
     max-width: 100%;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 18%;
+    margin: 0 auto;
   }
 
   .features-content {
@@ -385,7 +394,13 @@ h1 {
   }
 
   .features-app-preview {
-    max-width: 100%;
+    max-width: 18% !important;
+    flex: 0 0 18% !important;
+    margin: 0 auto;
+  }
+
+  .feature-screen {
+    width: 100% !important;
   }
 
   .features-tabs {
@@ -395,6 +410,21 @@ h1 {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .ratings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .app-buttons {
+    justify-content: center;
+  }
+
+  .feature-screen {
+    width: 45%;
   }
 }
 
