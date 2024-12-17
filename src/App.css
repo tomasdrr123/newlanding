@@ -738,3 +738,31 @@ body.menu-open {
 body.menu-open {
   overflow: hidden;
 }
+
+/* Base padding for App container */
+.App {
+  padding: 0 2%;
+}
+
+/* Features container padding */
+.features-container {
+  padding: 0 2%;
+}
+
+/* Footer container padding */
+.footer-container {
+  padding: 0 2%;
+}
+
+/* Mobile menu padding */
+@media (max-width: 768px) {
+  .mobile-menu {
+    padding: 5rem 2rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .App, .features-container, .footer-container {
+    padding: 0 5%;
+  }
+}
