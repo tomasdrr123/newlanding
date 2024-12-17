@@ -6,6 +6,7 @@ function App() {
   const [showDebugLines, setShowDebugLines] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const features = [
     {
@@ -48,6 +49,11 @@ function App() {
     alert('Thank you! We will notify you when the app launches.');
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    document.body.classList.toggle('menu-open');
+  };
+
   return (
     <div className={`App ${showDebugLines ? 'debug-mode' : ''}`}>
       {showModal && (
@@ -74,7 +80,17 @@ function App() {
         <div className="logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
           <img src="/logo firstmate.png" alt="YourFirstMate" />
         </div>
-        <div className="nav-links">
+        
+        <button 
+          className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`} 
+          onClick={toggleMobileMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div className="nav-links desktop-menu">
           <a href="#features" onClick={(e) => {
             e.preventDefault();
             document.getElementById('features').scrollIntoView({
@@ -94,8 +110,40 @@ function App() {
             });
           }}>FAQ</a>
         </div>
-        <div className="nav-buttons">
+        <div className="nav-buttons desktop-menu">
           <button className="btn-download" onClick={handleDownloadClick}>Download</button>
+        </div>
+
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          <div className="nav-links">
+            <a href="#features" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('features').scrollIntoView({
+                behavior: 'smooth'
+              });
+              toggleMobileMenu();
+            }}>Features</a>
+            <a href="#features" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('features').scrollIntoView({
+                behavior: 'smooth'
+              });
+              toggleMobileMenu();
+            }}>About</a>
+            <a href="#features" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('features').scrollIntoView({
+                behavior: 'smooth'
+              });
+              toggleMobileMenu();
+            }}>FAQ</a>
+          </div>
+          <div className="nav-buttons">
+            <button className="btn-download" onClick={(e) => {
+              handleDownloadClick(e);
+              toggleMobileMenu();
+            }}>Download</button>
+          </div>
         </div>
       </nav>
 
@@ -106,7 +154,7 @@ function App() {
             <span>Over 10,000 Captains 5-star ratings</span>
           </div>
           <h1>Your First Mate AI</h1>
-          <p>Embark on stress-free and confident sailing with KapitonAI, the AI-powered assistant tailored according to your experience and vessel, gathers all the weather, location, maritime information and provides real-time actionable alerts to simplify the complexities of sailing so you can focus on the adventure with the maximum comfort.</p>
+          <p>Embark on stress-free and confident sailing with YourFirstMate, the AI-powered assistant tailored according to your experience and vessel, gathers all the weather, location, maritime information and provides real-time actionable alerts to simplify the complexities of sailing so you can focus on the adventure with the maximum comfort.</p>
           <div className="app-buttons">
             <a 
               href="#" 
